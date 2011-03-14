@@ -1,0 +1,13 @@
+This is a minimalistic webserver written in pure R.
+In order to start it:
+
+$ R CMD BATCH webserver.R
+
+the webserver then listens on port 8088 and evaluates the path.
+e.g.
+
+curl "http://localhost:8088/paste(Sys.info(),collapse='')"
+
+returns a page with the system info of R.
+Be careful, because you open up a security hole. Calls with the system function can execute any bash command on the server.
+
